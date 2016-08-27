@@ -6,3 +6,7 @@ exports.getNgScriptPattern = function (path) {
   }
   return [fullPath + '**/*.js', '!' + fullPath + '**/*.test.js'];
 };
+
+exports.errorHandle = function (error) {
+  console.log(error);
+};

@@ -4,7 +4,7 @@ var gulp = require('gulp'),
 // self
 var conf = require('./conf.js');
 
-gulp.task('test', function () {
+gulp.task('test', ['lint'], function () {
   new karmaServer({
     configFile: __dirname + '/../karma.conf.js',
     singleRun: true

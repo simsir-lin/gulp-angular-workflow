@@ -7,7 +7,7 @@ var gulp = require('gulp'),
 var conf = require('./conf.js');
 var util = require('./util.js');
 
-gulp.task('inject', ['styles'], function () {
+gulp.task('inject', ['styles', 'lint'], function () {
   return gulp.src(conf.paths.src + '/index.html')
     // 往index.html注入index.css
     .pipe(inject(gulp.src(conf.paths.serve + '/*.css'), {
@@ -15,8 +15,10 @@ gulp.task('inject', ['styles'], function () {
       addRootSlash: false
     }))
     // 往index.html注入所有js脚本
-    .pipe(inject(gulp.src(util.getNgScriptPattern(conf.paths.src))
-        .pipe(angularFilesort()), {
+    .pipe(inject(
+      gulp.src(util.getNgScriptPattern(conf.paths.src))
+      .pipe(angularFilesort()
+    ), {
       ignorePath: conf.paths.src, //忽略的路径。这里忽略掉src
       addRootSlash: false
     }))

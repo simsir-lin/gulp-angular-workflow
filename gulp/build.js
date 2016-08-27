@@ -14,7 +14,7 @@ var gulp = require('gulp'),
 // self
 var conf = require('./conf.js');
 
-gulp.task('build', ['templateCacheHtml', 'inject', 'build-fonts'], function () {
+gulp.task('build', ['templateCacheHtml', 'inject', 'build-fonts', 'lint'], function () {
   var assets;
 
   var jsFilter = filter('**/*.js', { restore: true }),

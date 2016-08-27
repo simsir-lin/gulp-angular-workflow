@@ -6,3 +6,4 @@ require('./gulp/watch.js');
 require('./gulp/serve.js');
 require('./gulp/build.js');
 require('./gulp/test.js');
+require('./gulp/lint.js');
