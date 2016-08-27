@@ -1,15 +1,15 @@
 var gulp = require('gulp'),
   angularTemplatecache = require('gulp-angular-templatecache'),
-  ngAnnotate = require('gulp-ng-annotate'),
-  uglify = require('gulp-uglify'),
+  ngAnnotate = require('gulp-ng-annotate'),  //支持angular的依赖注入语法
+  uglify = require('gulp-uglify'),    // 压缩js文件
   inject = require("gulp-inject"),
   minifyHtml = require('gulp-minify-html'),
   minifyCss = require('gulp-minify-css'),
-  useref = require('gulp-useref'),
+  useref = require('gulp-useref'),    // 可以获取html中注释里面的插件文件
   filter = require('gulp-filter'),
-  rev = require('gulp-rev'),
+  rev = require('gulp-rev'),    // 根据静态内容生成md5签名，打包出来的文件名会加上md5签名
   revReplace = require('gulp-rev-replace'),
-  flatten = require('gulp-flatten');
+  flatten = require('gulp-flatten');    // 可以修改文件的绝对路径
 
 // self
 var conf = require('./conf.js');
