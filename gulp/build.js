@@ -2,19 +2,19 @@ var gulp = require('gulp'),
   angularTemplatecache = require('gulp-angular-templatecache'),
   ngAnnotate = require('gulp-ng-annotate'),
   uglify = require('gulp-uglify'),
-  bowerFiles = require('main-bower-files'),
   inject = require("gulp-inject"),
   minifyHtml = require('gulp-minify-html'),
   minifyCss = require('gulp-minify-css'),
   useref = require('gulp-useref'),
   filter = require('gulp-filter'),
   rev = require('gulp-rev'),
-  revReplace = require('gulp-rev-replace');
+  revReplace = require('gulp-rev-replace'),
+  flatten = require('gulp-flatten');
 
 // self
 var conf = require('./conf.js');
 
-gulp.task('build', ['templateCacheHtml', 'inject'], function () {
+gulp.task('build', ['templateCacheHtml', 'inject', 'build-fonts'], function () {
   var assets;
 
   var jsFilter = filter('**/*.js', { restore: true }),
@@ -39,6 +39,12 @@ gulp.task('build', ['templateCacheHtml', 'inject'], function () {
     .pipe(useref())
     .pipe(revReplace())
     .pipe(gulp.dest(conf.paths.dist + '/'));
+});
+
+gulp.task('build-fonts', function () {
+  return gulp.src('bower_components/**/*.{eot,svg,ttf,woff,woff2}')
+    .pipe(flatten())
+    .pipe(gulp.dest(conf.paths.dist + '/fonts/'));
 });
 
 gulp.task('templateCacheHtml', function () {
