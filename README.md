@@ -5,6 +5,6 @@
 <br/>
 <p>TODO: </p>
 <ul>
-  <li>serve: 对字体文件的处理</li>
-  <li>build: js语法检查, 对字体文件的处理</li>
+  <li>serve: <del>对字体文件的处理</del></li>
+  <li>build: js语法检查 <del>对字体文件的处理</del></li>
 </ul>
