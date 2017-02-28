@@ -19,7 +19,8 @@ function browserSyncStart(baseDir) {
     server: {
       baseDir: baseDir,
       routes: {
-        '/bower_components': 'bower_components'
+        '/bower_components': 'bower_components',
+        '/images': 'src/images'
       }
     },
     browser: 'default'

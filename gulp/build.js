@@ -14,7 +14,7 @@ var gulp = require('gulp'),
 // self
 var conf = require('./conf.js');
 
-gulp.task('build', ['templateCacheHtml', 'inject', 'build-fonts', 'lint'], function () {
+gulp.task('build', ['templateCacheHtml', 'inject', 'build-fonts', 'build-image', 'lint'], function () {
   var assets;
 
   var jsFilter = filter('**/*.js', { restore: true }),
@@ -45,6 +45,11 @@ gulp.task('build-fonts', function () {
   return gulp.src('bower_components/**/*.{eot,svg,ttf,woff,woff2}')
     .pipe(flatten())
     .pipe(gulp.dest(conf.paths.dist + '/fonts/'));
+});
+
+gulp.task('build-image', function () {
+  return gulp.src(conf.path.src + 'images/*.{png,jpg,jepg}')
+    .pipe(gulp.dest(conf.path.dist + 'images/'));
 });
 
 gulp.task('templateCacheHtml', function () {
