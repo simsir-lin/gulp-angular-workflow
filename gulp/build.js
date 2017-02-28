@@ -48,8 +48,8 @@ gulp.task('build-fonts', function () {
 });
 
 gulp.task('build-image', function () {
-  return gulp.src(conf.path.src + 'images/*.{png,jpg,jepg}')
-    .pipe(gulp.dest(conf.path.dist + 'images/'));
+  return gulp.src(conf.paths.src + '/images/*.{png,jpg,jepg}')
+    .pipe(gulp.dest(conf.paths.dist + '/images/'));
 });
 
 gulp.task('templateCacheHtml', function () {
