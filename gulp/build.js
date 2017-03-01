@@ -48,7 +48,7 @@ gulp.task('build-fonts', function () {
 });
 
 gulp.task('build-image', function () {
-  return gulp.src(conf.paths.src + '/images/*.{png,jpg,jepg}')
+  return gulp.src(conf.paths.src + '/images/*.{png,jpg,jpeg}')
     .pipe(gulp.dest(conf.paths.dist + '/images/'));
 });
 
