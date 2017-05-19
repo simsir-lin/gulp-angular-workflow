@@ -2,12 +2,12 @@
   'use strict';
 
   angular
-    .module('myApp')
+    .module('shop')
     .controller('HomeController', HomeController);
 
   function HomeController(
   ) {
     var vm = this;
-    vm.name = 'linhaoyu';
+    return vm;
   }
 })();

@@ -1,24 +1,19 @@
 var gulp = require('gulp'),
   angularTemplatecache = require('gulp-angular-templatecache'),
   ngAnnotate = require('gulp-ng-annotate'),  //支持angular的依赖注入语法
-
-  inject = require("gulp-inject"),
-
   uglify = require('gulp-uglify'),    // 压缩js文件
+  inject = require("gulp-inject"),
   minifyHtml = require('gulp-minify-html'),
   minifyCss = require('gulp-clean-css'),
-  htmlmin = require('gulp-htmlmin'),
-
-  filter = require('gulp-filter'),
-
   useref = require('gulp-useref'),    // 可以获取html中注释里面的插件文件
+  filter = require('gulp-filter'),
   rev = require('gulp-rev'),    // 根据静态内容生成md5签名，打包出来的文件名会加上md5签名
   revReplace = require('gulp-rev-replace'),
+  flatten = require('gulp-flatten'),    // 可以修改文件的绝对路径
   saveLicense = require('uglify-save-license'),
+  htmlmin = require('gulp-htmlmin'),
   gulpif = require('gulp-if'),
   size = require('gulp-size'),
-
-  flatten = require('gulp-flatten'),    // 可以修改文件为绝对路径
   rename = require('gulp-rename'),
   clean = require('gulp-clean');
 
@@ -50,7 +45,7 @@ gulp.task('build-fonts', function () {
 });
 
 gulp.task('build-image', function () {
-  return gulp.src(conf.paths.src + '/images/*.{png,jpg,jpeg}')
+  return gulp.src([conf.paths.src + '/images/*.{png,jpg,jpeg,svg}', conf.paths.src + '/images/*/*.{png,jpg,jpeg,svg}'])
     .pipe(gulp.dest(conf.paths.dist + '/images/'));
 });
 
@@ -70,7 +65,7 @@ gulp.task('templateCacheHtml', function () {
       quotes: true
     }))
     .pipe(angularTemplatecache('templateCacheHtml.js', {
-      module: conf.angular.module,
+      module: 'shop',
       root: 'app'
     }))
     .pipe(gulp.dest(conf.paths.serve + '/'));

@@ -1,0 +1,35 @@
+.simsir-shop-modal {
+  .modal-dialog {
+    position: fixed;
+    bottom: 0;
+    width: 100vw;
+    margin: 0;
+
+    i {
+      font-size: 0.2rem;
+      color: #333;
+      float: right;
+    }
+
+    .modal-content {
+      border-radius: 0;
+      border: none;
+      .modal-body {
+        padding-top: 0.1rem;
+      }
+    }
+    .modal-footer {
+      padding: 0;
+      .btn-none {
+        display: block;
+        width: 100vw;
+        background: $mainColor;
+        color: #fff;
+        padding: 0.1rem 0;
+        &:disabled {
+          background: $disabledColor;
+        }
+      }
+    }
+  }
+}

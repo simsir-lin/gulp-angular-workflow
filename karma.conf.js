@@ -8,7 +8,8 @@ function getFiles() {
     .concat([
       conf.paths.src + '/**/*.module.js',
       conf.paths.src + '/**/*.js',
-      conf.paths.src + '/**/*.test.js'
+      conf.paths.src + '/**/*.test.js',
+      'bower_components/angular-mocks/angular-mocks.js'
     ])
     .concat([conf.paths.src + '/**/*.html']);
 

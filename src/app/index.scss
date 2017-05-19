@@ -1,5 +1,121 @@
 // bower:scss
 // endbower
 
+$mainColor: #ff5722; //#FB561F;
+$mainColorDisabled: #bf360c;
+$defaultColor: #999;
+$disabledColor: #ccc;
+
+$checkboxSize: 0.2rem;
+$fontSize: 0.14rem;
+
+[ui-sref] {
+  cursor: pointer;
+}
+
+* {
+  font-family: "Microsoft Yahei", "Helvetica Neue", "Helvetica", "Hiragino Sans GB", "Heiti SC", "WenQuanYi Micro Hei", sans-serif;
+}
+*:not(input) {
+  user-select: none;
+}
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+a {
+  text-decoration: none;
+  color: #333;
+  &:hover, &:focus {
+    text-decoration: none;
+  }
+}
+a,span,p,li,button,input {
+  font-size: $baseFontSize;
+}
+p {
+  margin-bottom: 0.08rem;
+}
+li {
+  outline: none;
+}
+input {
+  &:focus {
+    outline: none !important;
+    box-shadow: none !important;
+  }
+}
+
+body {
+  background: #F4F4F4; // #eee;
+}
+.avatar {
+  $size: 0.64rem;
+  height: $size;
+  width: $size;
+  max-width: $size;
+  max-width: $size;
+  border-radius: 50%;
+}
+
+// p.price {
+//   color: $mainColor;
+//   font-size: 0.18rem;
+//   &:before {
+//     content: '￥';
+//     font-size: 0.14rem;
+//   }
+// }
+// .delete-price {
+//   color: #999;
+//   &:before {
+//     content: '￥';
+//     font-size: 0.14rem;
+//   }
+// }
+// span.price {
+//   &:before {
+//     content: '￥';
+//   }
+// }
+
+i.fa-chevron-right {
+  color: #aaa;
+  margin-left: 0.05rem;
+}
+
+
+.text-over-handle {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.tip-empty {
+  text-align: center;
+  padding: 30px;
+  i {
+    color: #ccc;
+  }
+  p {
+    margin-top: 0.1rem;
+    color: #999;
+  }
+}
+
+#toast-container {
+  box-shadow: none;
+  div {
+    box-shadow: none;
+    &:hover {
+      box-shadow: none;
+    }
+    &:focus {
+      box-shadow: none;
+    }
+  }
+}
+
 // scssinjector
 // endinjector

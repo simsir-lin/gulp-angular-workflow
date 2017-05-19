@@ -2,8 +2,14 @@
   'use strict';
 
   angular
-    .module('myApp', [
-      'ui.router'
+    .module('shop', [
+      'ngAnimate',
+			'ngTouch',
+			'ngSanitize',
+      'ui.router',
+      'ui.bootstrap',
+			'toastr',
+      'LocalStorageModule'
     ]);
 
 })();

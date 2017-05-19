@@ -1,8 +1,8 @@
 <!doctype html>
-<html ng-app="myApp">
+<html ng-app="shop">
   <head>
     <meta charset="utf-8">
-    <title>simsir</title>
+    <title>bohoshop</title>
     <meta name="description" content="">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
     <!-- build:css(bower_components) styles/vendor.css -->
@@ -15,8 +15,9 @@
     <!-- endbuild -->
   </head>
   <body>
-    <section class="container" ui-view>
-
+    <section ui-view>
+      <div class="nav-content" ui-view="nav-content"></div>
+      <navbar></navbar>
     </section>
 
     <!-- build:js(bower_components) scripts/vendor.js -->
